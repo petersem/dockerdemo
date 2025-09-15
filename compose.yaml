@@ -1,0 +1,11 @@
+services:
+  dockerdemo:
+    image: dockerdemo
+    container_name: dockerdemo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3211:3210
