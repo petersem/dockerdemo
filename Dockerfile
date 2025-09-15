@@ -1,5 +1,10 @@
 FROM node:lts-alpine
 ENV NODE_ENV=production
+
+RUN apk update 
+RUN apk add tzdata
+RUN apk add net-tools
+
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --production --silent && mv node_modules ../
