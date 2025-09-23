@@ -24,7 +24,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/api/status', (req, res) => {
+app.get('/', (req, res) => {
     res.json(JSON.stringify(results));
 });
 
