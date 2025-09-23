@@ -15,7 +15,7 @@ for (const name of Object.keys(nets)) {
                 results[name] = [];
             }
 
-            results[name].push(net.address);
+            results[name].push(hostname, net.address);
         }
     }
 }
@@ -25,9 +25,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/api/status', (req, res) => {
-    const curTime = new Date();
-    var output = curTime.toLocaleTimeString() + " Hi from " + hostname + " at " + JSON.stringify(results);
-    res.json(output);
+    res.json(JSON.stringify(results));
 });
 
 app.listen(3210, () => { 
