@@ -29,5 +29,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3210, () => { 
-    console.log("Docker demo running on " + hostname + ":3210");
+    console.log("Dockerdemo running on " + hostname + ":3210");
 });
